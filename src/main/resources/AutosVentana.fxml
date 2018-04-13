@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ar.com.educacionit.vehiculos.ventanas.AutosVentanaController">
+   <children>
+      <Button fx:id="btnAutosCerrar" layoutX="526.0" layoutY="349.0" mnemonicParsing="false" onAction="#cerrarVentanaAutos" text="Cerrar" />
+      <Button fx:id="btnAutoBorrar" disable="true" layoutX="374.0" layoutY="349.0" mnemonicParsing="false" onAction="#borrarVentanaAutos" text="Borrar" />
+      <Button fx:id="btnAutoEditar" disable="true" layoutX="300.0" layoutY="349.0" mnemonicParsing="false" onAction="#editarVentanaAutos" text="Editar" />
+      <Button fx:id="btnAutoNuevo" layoutX="222.0" layoutY="349.0" mnemonicParsing="false" onAction="#nuevoVentanaAutos" text="Nuevo" />
+      <GridPane layoutX="227.0" layoutY="17.0" prefHeight="204.0" prefWidth="366.0">
+         <children>
+            <Label fx:id="lblDatosDelAuto" prefHeight="54.0" prefWidth="99.0" text="Datos del Auto" />
+            <Label fx:id="lblAlto" text="Alto:" GridPane.rowIndex="1" />
+            <Label fx:id="lblAncho" text="Ancho:" GridPane.rowIndex="2" />
+            <Label fx:id="lblLargo" text="Largo:" GridPane.rowIndex="3" />
+            <Label fx:id="lblModelo" text="Modelo:" GridPane.rowIndex="4" />
+            <Label fx:id="lblMarca" text="Marca:" GridPane.rowIndex="5" />
+            <Label fx:id="lblColor" text="Color:" GridPane.rowIndex="6" />
+            <Label fx:id="lblPrecio" text="Precio:" GridPane.rowIndex="7" />
+            <Label fx:id="lblAutoAlto" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="lblAutoAncho" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="lblAutoLargo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="lblAutoModelo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="lblAutoMarca" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="lblAutoColor" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="lblAutoPrecio" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="99.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.0" minWidth="10.0" prefWidth="179.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <TextArea fx:id="txtDescripcion" layoutX="222.0" layoutY="227.0" prefHeight="98.0" prefWidth="366.0" />
+      <Separator layoutX="215.0" layoutY="4.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="5.0" />
+      <TableView fx:id="tblAutoTable" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="204.0">
+         <columns>
+            <TableColumn fx:id="tblAutoMarca" prefWidth="103.0" text="Marca" />
+            <TableColumn fx:id="tblAutoModelo" prefWidth="100.0" text="Modelo" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

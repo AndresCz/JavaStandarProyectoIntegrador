@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="465.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ar.com.educacionit.vehiculos.ventanas.AutosEdicionController">
+   <children>
+      <GridPane layoutX="8.0" prefHeight="245.0" prefWidth="592.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="193.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="484.0" minWidth="10.0" prefWidth="433.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="484.0" minWidth="10.0" prefWidth="110.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Alto:" />
+            <Label text="Largo:" GridPane.rowIndex="1" />
+            <Label text="Ancho:" GridPane.rowIndex="2" />
+            <Label text="Marca:" GridPane.rowIndex="3" />
+            <Label text="Modelo:" GridPane.rowIndex="4" />
+            <Label text="Color:" GridPane.rowIndex="5" />
+            <Label text="Precio:" GridPane.rowIndex="6" />
+            <Label text="  cm." GridPane.columnIndex="2" />
+            <Label text="  cm." GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="  cm." GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="  AR$" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField fx:id="txtAutosEdicionAlto" GridPane.columnIndex="1" />
+            <TextField fx:id="txtAutosEdicionLargo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtAutosEdicionAncho" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cbxAutosEdicionMarca" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbxAutosEdicionModelo" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="cbxAutosEdicionColor" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtAutosEdicionPrecio" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <TextArea fx:id="txaAutosEdicionEquipamiento" layoutX="13.0" layoutY="273.0" prefHeight="149.0" prefWidth="572.0" promptText="Equipamiento" />
+      <Button fx:id="btnAutosEdicionCancelar" layoutX="508.0" layoutY="426.0" mnemonicParsing="false" onAction="#cancelarAutosEdicion" prefHeight="25.0" prefWidth="78.0" text="Cancelar" />
+      <Button fx:id="btnAutosEdicionAceptar" layoutX="414.0" layoutY="426.0" mnemonicParsing="false" onAction="#aceptarAutosEdicion" prefHeight="25.0" prefWidth="78.0" text="Aceptar" />
+   </children>
+</AnchorPane>

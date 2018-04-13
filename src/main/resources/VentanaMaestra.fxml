@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ar.com.educacionit.vehiculos.ventanas.VentanaMaestraController">
+   <top>
+      <MenuBar fx:id="menuPrincipal" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <menus>
+            <Menu fx:id="menuAbrirVentana" mnemonicParsing="false" text="Abrir Ventana">
+               <items>
+                  <MenuItem fx:id="subMenuAutos" mnemonicParsing="false" onAction="#abrirVentanaAutos" text="Autos" />
+                  <MenuItem fx:id="subMenuVendedores" mnemonicParsing="false" onAction="#abrirVentanaVendedores" text="Vendedores" />
+                  <MenuItem fx:id="subMenuCompradores" mnemonicParsing="false" onAction="#abrirVentanaCompradores" text="Compradores" />
+               </items>
+            </Menu>
+            <Menu fx:id="menuAyuda" mnemonicParsing="false" text="Ayuda">
+               <items>
+                  <MenuItem fx:id="subMenuAyudaOnline" mnemonicParsing="false" text="Ayuda on-line" />
+                  <MenuItem fx:id="subMenuConfiguracion" mnemonicParsing="false" onAction="#abrirVentanaConfiguracion" text="Configuracion" />
+                  <MenuItem fx:id="subMenuSalir" mnemonicParsing="false" onAction="#cerrarPrograma" text="Salir" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
