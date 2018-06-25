@@ -19,6 +19,8 @@ public class VentanaMaestraMain extends Application{
     private boolean ventanaCompradoresAbierta=false;
     private boolean ventanaAutosEdicion=false;
     private boolean ventanaConfiguracionAbierta=false;
+    private boolean ventanaCompradorEdicionAbierta=false;
+    private boolean ventanaVendedorEdicionAbierta=false;
     
     @Override
     public void start(Stage primaryStage) {
@@ -32,7 +34,7 @@ public class VentanaMaestraMain extends Application{
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/VentanaMaestra.fxml"));
+            loader.setLocation(getClass().getResource("/fxml/VentanaMaestra.fxml"));
             ventanaMaestra = (BorderPane) loader.load();
             VentanaMaestraController controlador = loader.getController();
             controlador.setMainApp(this);
@@ -50,7 +52,7 @@ public class VentanaMaestraMain extends Application{
         try {
             if(!ventanaAutosAbierta){
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/AutosVentana.fxml"));
+            loader.setLocation(getClass().getResource("/fxml/AutosVentana.fxml"));
             AnchorPane ventanaAutos = (AnchorPane) loader.load();
             AutosVentanaController controladorAutos = loader.getController();
             controladorAutos.setMainApp(this);
@@ -74,7 +76,7 @@ public class VentanaMaestraMain extends Application{
         try {
             if(!ventanaVendedoresAbierta){
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/VendedoresVentana.fxml"));
+            loader.setLocation(getClass().getResource("/fxml/VendedoresVentana.fxml"));
             AnchorPane ventanaVendedores = (AnchorPane) loader.load();
             VendedoresVentanaController controladorVendedores = loader.getController();
             controladorVendedores.setMainApp(this);
@@ -96,7 +98,7 @@ public class VentanaMaestraMain extends Application{
         try {
             if(!ventanaCompradoresAbierta){
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/CompradoresVentana.fxml"));
+            loader.setLocation(getClass().getResource("/fxml/CompradoresVentana.fxml"));
             AnchorPane ventanaCompradores = (AnchorPane) loader.load();
             CompradoresVentanaController controladorCompradores = loader.getController();
             controladorCompradores.setMainApp(this);
@@ -118,7 +120,7 @@ public class VentanaMaestraMain extends Application{
         try {
             if(!ventanaConfiguracionAbierta){
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/VentanaConfiguracion.fxml"));
+            loader.setLocation(getClass().getResource("/fxml/VentanaConfiguracion.fxml"));
             AnchorPane ventanaConfiguracion = (AnchorPane) loader.load();
             VentanaConfiguracionController controladorConfiguracion = loader.getController();
             controladorConfiguracion.setMainApp(this);
@@ -140,7 +142,7 @@ public class VentanaMaestraMain extends Application{
         try {
             if(!ventanaAutosEdicion){
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/AutosEdicion.fxml"));
+            loader.setLocation(getClass().getResource("/fxml/AutosEdicion.fxml"));
             AnchorPane autosEdicion = (AnchorPane) loader.load();
             AutosEdicionController controladorAutosEdicion = loader.getController();
             controladorAutosEdicion.setMainApp(this);
@@ -157,7 +159,51 @@ public class VentanaMaestraMain extends Application{
         }
         
     }
+    
+    public void abrirVendedorEdicion(){
+        try {
+            if(!ventanaVendedorEdicionAbierta){
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/fxml/VendedorEdicion.fxml"));
+            AnchorPane vendedorEdicion = (AnchorPane) loader.load();
+            VendedorEdicionController controladorVendedorEdicion = loader.getController();
+            controladorVendedorEdicion.setMainApp(this);
+            Stage vendedorEdicionStage = new Stage();
+            Scene scene = new Scene(vendedorEdicion);
+            vendedorEdicionStage.setTitle("Nuevo Vendedor");
+            vendedorEdicionStage.setScene(scene);
+            vendedorEdicionStage.show();
+            setVentanaVendedorEdicionAbierta(true);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         
+    }
+    
+    public void abrirCompradorEdicion(){
+        try {
+            if(!ventanaCompradorEdicionAbierta){
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/fxml/CompradorEdicion.fxml"));
+            AnchorPane compradorEdicion = (AnchorPane) loader.load();
+            CompradorEdicionController controladorCompradorEdicion = loader.getController();
+            controladorCompradorEdicion.setMainApp(this);
+            Stage compradorEdicionStage = new Stage();
+            Scene scene = new Scene(compradorEdicion);
+            compradorEdicionStage.setTitle("Nuevo Comprador");
+            compradorEdicionStage.setScene(scene);
+            compradorEdicionStage.show();
+            setVentanaCompradorEdicionAbierta(true);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+    }
+    
     public static void main(String[] args){
         launch(args);
     }    
@@ -180,11 +226,35 @@ public class VentanaMaestraMain extends Application{
         this.ventanaConfiguracionAbierta = ventanaConfiguracionAbierta;
     }
     
+    public void setVentanaCompradorEdicionAbierta(boolean ventanaCompradorEdicionAbierta) {
+        this.ventanaCompradorEdicionAbierta = ventanaCompradorEdicionAbierta;
+    }
+
+    public void setVentanaVendedorEdicionAbierta(boolean ventanaVendedorEdicionAbierta) {
+        this.ventanaVendedorEdicionAbierta = ventanaVendedorEdicionAbierta;
+    }
+    
     protected void alertarVacio(Control campo) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("");
         alert.setHeaderText("Alerta");
         alert.setContentText("El campo no puede estar vacio");
+        alert.showAndWait();
+        campo.requestFocus();
+    }
+    protected void alertarEntero(Control campo) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("");
+        alert.setHeaderText("Alerta");
+        alert.setContentText("Se deben ingresar numeros enteros");
+        alert.showAndWait();
+        campo.requestFocus();
+    }
+    protected void alertarDecimal(Control campo) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("");
+        alert.setHeaderText("Alerta");
+        alert.setContentText("Se deben ingresar numeros con decimales");
         alert.showAndWait();
         campo.requestFocus();
     }

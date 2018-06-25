@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class CompradoresVentanaController implements Initializable{
+    @FXML
+    private Button btnCompradorNuevo;
     
     private VentanaMaestraMain mainApp;
         
@@ -18,6 +20,10 @@ public class CompradoresVentanaController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
+    }
+    @FXML
+    void abrirCompradorEdicion(ActionEvent event) {
+        mainApp.abrirCompradorEdicion();
     }
     @FXML
     void cerrarVentanaComprador(ActionEvent event) {

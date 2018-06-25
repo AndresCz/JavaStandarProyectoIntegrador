@@ -12,7 +12,7 @@
       <Button fx:id="btnCompradorCerrar" layoutX="559.0" layoutY="189.0" mnemonicParsing="false" onAction="#cerrarVentanaComprador" text="Cerrar" />
       <Button fx:id="btnCompradorBorrar" disable="true" layoutX="363.0" layoutY="189.0" mnemonicParsing="false" text="Borrar" />
       <Button fx:id="btnCompradorEditar" disable="true" layoutX="289.0" layoutY="189.0" mnemonicParsing="false" text="Editar" />
-      <Button fx:id="btnCompradorNuevo" layoutX="213.0" layoutY="189.0" mnemonicParsing="false" text="Nuevo" />
+      <Button fx:id="btnCompradorNuevo" layoutX="213.0" layoutY="189.0" mnemonicParsing="false" onAction="#abrirCompradorEdicion" text="Nuevo" />
       <Separator layoutX="209.0" layoutY="184.0" prefHeight="5.0" prefWidth="412.0" />
       <GridPane layoutX="213.0" layoutY="6.0" prefHeight="179.0" prefWidth="412.0">
          <children>

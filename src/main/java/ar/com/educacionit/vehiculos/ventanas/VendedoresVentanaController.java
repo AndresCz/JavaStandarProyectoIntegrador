@@ -20,10 +20,16 @@ import javafx.stage.Stage;
 public class VendedoresVentanaController implements Initializable{
     
     private VentanaMaestraMain mainApp;
-    
+    @FXML
+    private Button btnVendedorNuevo;
     @FXML
     private Button btnVendedorCerrar;
-    
+
+    @FXML
+    public void nuevoVendedorVentana(ActionEvent event) {
+        mainApp.abrirVendedorEdicion();
+    }
+
     public void cerrarVentanaVendedor(ActionEvent event){
         Stage stage = (Stage) btnVendedorCerrar.getScene().getWindow();
         stage.close();

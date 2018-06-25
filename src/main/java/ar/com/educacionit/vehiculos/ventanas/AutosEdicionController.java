@@ -83,25 +83,31 @@ public class AutosEdicionController implements Initializable {
         this.mainApp = mainApp;
     }
     private boolean isFormularioOK(){
-        if (txtAutosEdicionAlto.getText().trim().isEmpty()){
-            mainApp.alertarVacio(txtAutosEdicionAlto);
+        try {
+            Integer.parseInt(txtAutosEdicionAlto.getText());
+        }catch (NumberFormatException e) {
+            mainApp.alertarEntero(txtAutosEdicionAlto);
             return false;
         }
-        if (txtAutosEdicionLargo.getText().trim().isEmpty()){
-            mainApp.alertarVacio(txtAutosEdicionLargo);
+        try {
+            Integer.parseInt(txtAutosEdicionLargo.getText());
+        }catch (NumberFormatException e) {
+            mainApp.alertarEntero(txtAutosEdicionLargo);
             return false;
-            
         }
-        if (txtAutosEdicionAncho.getText().trim().isEmpty()) {
-            mainApp.alertarVacio(txtAutosEdicionAncho);
+        try {
+            Integer.parseInt(txtAutosEdicionAncho.getText());
+        }catch (NumberFormatException e) {
+            mainApp.alertarEntero(txtAutosEdicionAncho);
             return false;
-            
         }
-        if (txtAutosEdicionPrecio.getText().trim().isEmpty()) {
-            mainApp.alertarVacio(txtAutosEdicionPrecio);
+
+        try {
+            Double.parseDouble(txtAutosEdicionPrecio.getText());
+        }catch (NumberFormatException e) {
+            mainApp.alertarDecimal(txtAutosEdicionPrecio);
             return false;
-            
-        }
+        }    
         if (txaAutosEdicionEquipamiento.getText().trim().isEmpty()){
             mainApp.alertarVacio(txaAutosEdicionEquipamiento);
             return false;
