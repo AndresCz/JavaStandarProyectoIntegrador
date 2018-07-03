@@ -39,9 +39,9 @@
             <TextField fx:id="txtAutosEdicionAlto" GridPane.columnIndex="1" />
             <TextField fx:id="txtAutosEdicionLargo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtAutosEdicionAncho" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ComboBox fx:id="cbxAutosEdicionMarca" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox fx:id="cbxAutosEdicionModelo" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ComboBox fx:id="cbxAutosEdicionColor" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="cbxAutosEdicionMarca" onAction="#cargarMarca" prefWidth="250.0" promptText="-Seleccionar-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbxAutosEdicionModelo" onAction="#cargarModelo" prefWidth="250.0" promptText="-Seleccionar-" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="cbxAutosEdicionColor" onAction="#cargarColor" prefWidth="250.0" promptText="-Seleccionar-" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <TextField fx:id="txtAutosEdicionPrecio" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>

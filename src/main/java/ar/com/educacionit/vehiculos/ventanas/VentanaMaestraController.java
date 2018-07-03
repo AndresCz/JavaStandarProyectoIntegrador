@@ -1,5 +1,6 @@
 package ar.com.educacionit.vehiculos.ventanas;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -9,7 +10,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 
-public class VentanaMaestraController implements Initializable {
+public class VentanaMaestraController implements Initializable{
 
     private VentanaMaestraMain mainApp;
     
@@ -18,7 +19,7 @@ public class VentanaMaestraController implements Initializable {
     }    
 
     @FXML
-    private void abrirVentanaAutos(ActionEvent event) {
+    private void abrirVentanaAutos(ActionEvent event) throws IOException {
         this.mainApp.abrirVentanaAutos();
     }
     

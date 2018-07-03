@@ -1,5 +1,6 @@
 package ar.com.educacionit.vehiculos.ventanas;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -31,7 +32,7 @@ public class AutosVentanaController implements Initializable{
     
    
     
-    public void nuevoVentanaAutos(ActionEvent event) {
+    public void nuevoVentanaAutos(ActionEvent event) throws IOException{
         mainApp.abrirAutosEdicion();
     }
     

@@ -23,14 +23,14 @@ public class VentanaMaestraMain extends Application{
     private boolean ventanaVendedorEdicionAbierta=false;
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Ventana Maestra");
         initVentanaMaestra();
 
     }
     
-    public void initVentanaMaestra() {
+    public void initVentanaMaestra(){
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
@@ -48,7 +48,7 @@ public class VentanaMaestraMain extends Application{
     }
     
 
-    public void abrirVentanaAutos(){
+    public void abrirVentanaAutos() {
         try {
             if(!ventanaAutosAbierta){
             FXMLLoader loader = new FXMLLoader();
@@ -255,6 +255,14 @@ public class VentanaMaestraMain extends Application{
         alert.setTitle("");
         alert.setHeaderText("Alerta");
         alert.setContentText("Se deben ingresar numeros con decimales");
+        alert.showAndWait();
+        campo.requestFocus();
+    }
+    protected void alertarSeleccion(Control campo) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("");
+        alert.setHeaderText("Alerta");
+        alert.setContentText("Se debe seleccionar una opcion");
         alert.showAndWait();
         campo.requestFocus();
     }
