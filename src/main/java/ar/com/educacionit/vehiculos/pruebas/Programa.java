@@ -5,8 +5,8 @@ public class Programa {
     
     public static void main(String[] args) {
         
-    Auto a = new Auto("Peugeot","504","Blanco",4,3,2);
-    System.out.println(a.toString());
+    //Auto a = new Auto("Peugeot","504","Blanco",4,3,2,"200","Airbag");
+    //System.out.println(a.toString());
     
     
         

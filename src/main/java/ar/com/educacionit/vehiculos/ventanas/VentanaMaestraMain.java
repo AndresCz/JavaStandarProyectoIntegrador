@@ -1,5 +1,6 @@
 package ar.com.educacionit.vehiculos.ventanas;
 
+import ar.com.educacionit.vehiculos.entidades.Auto;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +22,8 @@ public class VentanaMaestraMain extends Application{
     private boolean ventanaConfiguracionAbierta=false;
     private boolean ventanaCompradorEdicionAbierta=false;
     private boolean ventanaVendedorEdicionAbierta=false;
+    
+    private Auto auto;
     
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -266,4 +269,14 @@ public class VentanaMaestraMain extends Application{
         alert.showAndWait();
         campo.requestFocus();
     }
+
+    public Auto getAuto() {
+        return auto;
+    }
+
+    public void setAuto(Auto auto) {
+        this.auto = auto;
+    }
+    
+    
 }
