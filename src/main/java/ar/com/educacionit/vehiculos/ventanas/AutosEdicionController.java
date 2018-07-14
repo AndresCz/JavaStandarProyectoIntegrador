@@ -19,7 +19,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
-public class AutosEdicionController implements Initializable{
+public class AutosEdicionController extends AutosVentanaController implements Initializable{
     
     private VentanaMaestraMain mainApp;
     
@@ -53,10 +53,9 @@ public class AutosEdicionController implements Initializable{
     @FXML
     private Button btnAutosEdicionCancelar;
     
-    private Auto auto;
-    
     @FXML
     void aceptarAutosEdicion(ActionEvent event) {
+       
         if (formularioCompletado()){
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Confirmacion");
@@ -65,7 +64,7 @@ public class AutosEdicionController implements Initializable{
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 try{
-                auto = mainApp.getAuto();
+                Auto auto = mainApp.getAuto();
                 auto.setAlto(Integer.parseInt(txtAutosEdicionAlto.getText()));
                 auto.setAncho(Integer.parseInt(txtAutosEdicionAncho.getText()));
                 auto.setLargo(Integer.parseInt(txtAutosEdicionLargo.getText()));
@@ -75,7 +74,6 @@ public class AutosEdicionController implements Initializable{
                 auto.setPrecio(Integer.parseInt(txtAutosEdicionPrecio.getText()));
                 auto.setEquipamiento(txaAutosEdicionEquipamiento.getText());
                 Stage stage = (Stage) btnAutosEdicionCancelar.getScene().getWindow();
-                
                 stage.close();
                 mainApp.setVentanaAutosEdicion(false);
                 }catch(Exception error){
@@ -93,6 +91,7 @@ public class AutosEdicionController implements Initializable{
         mainApp.setVentanaAutosEdicion(false);
     }
     
+    @Override
     public void setMainApp(VentanaMaestraMain mainApp) {
         this.mainApp = mainApp;
     }

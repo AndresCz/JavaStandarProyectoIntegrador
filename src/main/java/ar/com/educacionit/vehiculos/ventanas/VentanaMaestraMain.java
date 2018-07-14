@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Control;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class VentanaMaestraMain extends Application{
@@ -129,7 +130,7 @@ public class VentanaMaestraMain extends Application{
             controladorConfiguracion.setMainApp(this);
             Stage configuracionStage = new Stage();
             Scene scene = new Scene(ventanaConfiguracion);
-            configuracionStage.setTitle("Compradores");
+            configuracionStage.setTitle("Configuracion");
             configuracionStage.setScene(scene);
             configuracionStage.show();
             setVentanaConfiguracionAbierta(true);
@@ -153,14 +154,15 @@ public class VentanaMaestraMain extends Application{
             Scene scene = new Scene(autosEdicion);
             autosEdicionStage.setTitle("Nuevo Auto");
             autosEdicionStage.setScene(scene);
-            autosEdicionStage.show();
             setVentanaAutosEdicion(true);
+            autosEdicionStage.showAndWait();
+            
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
     
     public void abrirVendedorEdicion(){

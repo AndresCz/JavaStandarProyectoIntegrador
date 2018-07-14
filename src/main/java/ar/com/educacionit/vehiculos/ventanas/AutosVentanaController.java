@@ -104,16 +104,19 @@ public class AutosVentanaController implements Initializable{
                     (observable, oldValue, newValue) -> mostarAutoDetalle(newValue));
             
             tblAutoTable.setItems(autosLista);
+            
     }
-    
-    public void nuevoVentanaAutos(ActionEvent event) throws IOException{
-        Stage stage = (Stage) btnAutosCerrar.getScene().getWindow();
+    public void nuevoVentanaAutos(ActionEvent event) throws IOException, InterruptedException{
+        //Stage stage = (Stage) btnAutosCerrar.getScene().getWindow();
         Auto auto = new Auto();
         mainApp.setAuto(auto);
         mainApp.abrirAutosEdicion();
         auto = mainApp.getAuto();
-        autosLista.add(auto);
-        tblAutoTable.getSelectionModel().select(auto);
+        if(auto.getModelo() != null){
+            autosLista.add(auto);
+            tblAutoTable.getSelectionModel().select(auto);
+        }
+        
     }
     
     public void editarVentanaAutos(ActionEvent event) {
